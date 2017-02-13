@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Big Data Smart Solutions";
+}
+
+<div class="jumbotron">
+    <h1>Big Data Smart Solutions</h1>
+</div>
+<div>
+    <h4><strong> Carregue a planilha no formato excel <p style="color:red;">(.xls ou .xlsx)</p></strong></h4> 
+</div>
+<div class="row">
+   @using (Html.BeginForm("UploadArquivo", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+   {
+
+    <div>
+        @Html.TextBox("arquivo", "", new { type = "file" }) <br />
+
+        <input type="submit" value="Gerar arquivo csv" />
+
+        @ViewBag.Message
+
+    </div>
+
+
+   }
+</div>
